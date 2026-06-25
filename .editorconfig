@@ -1,0 +1,13 @@
+root = true
+
+[*]
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.py]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+line_ending = lf

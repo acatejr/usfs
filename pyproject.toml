@@ -1,0 +1,52 @@
+[project]
+name = "usfs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "acatejr@gmail.com", email = "acatejr@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "bs4>=0.0.2",
+    "click>=8.4.1",
+    "lxml>=6.1.1",
+    "python-dotenv>=1.2.2",
+    "requests>=2.34.2",
+    "python-dotenv>=1.2.1",
+]
+
+[project.optional-dependencies]
+# Local-first inventory layer: Postgres/pgvector store + local embeddings/LLM.
+ai = [
+    "psycopg[binary]>=3.2",
+    "pgvector>=0.3.6",
+    "sqlalchemy>=2.0",
+    "fastembed>=0.4",
+    "pydantic>=2.0",
+]
+# Cloud providers, swapped in via USFS_PROVIDER=anthropic. Optional, install later.
+anthropic = [
+    "anthropic>=0.40",
+    "voyageai>=0.3",
+]
+# VerdeLLM via a LiteLLM proxy, swapped in via USFS_PROVIDER=verde. Optional.
+verde = [
+    "langchain-community>=0.4.1",
+    "langchain-litellm>=0.4.0",
+    "litellm>=1.81.9",
+]
+
+[project.scripts]
+usfs = "usfs.main:main"
+
+[build-system]
+requires = ["uv_build>=0.11.19,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-sugar>=1.1.1",
+    "ruff>=0.15.18",
+]
