@@ -1,3 +1,7 @@
+---
+icon: lucide/sparkles
+---
+
 # Enriching the Inventory (`enrich`)
 
 ## What it does

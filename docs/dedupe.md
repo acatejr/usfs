@@ -1,3 +1,7 @@
+---
+icon: lucide/copy
+---
+
 # Finding Duplicate Datasets (`dedupe`)
 
 ## What it does
